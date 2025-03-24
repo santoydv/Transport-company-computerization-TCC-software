@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCC System - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Transport Company</h1>
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#consignments">Consignments</a>
+            <a href="#trucks">Trucks</a>
+            <a href="#reports">Reports</a>
+        </div>
+        <div class="hamburger">☰</div>
+    </nav>
+
+    <main class="dashboard">
+        <!-- Dashboard Summary Cards -->
+        <div class="card">
+            <h3>Total Consignments</h3>
+            <p id="total-consignments">0</p>
+        </div>
+        <div class="card">
+            <h3>Active Trucks</h3>
+            <p id="active-trucks">0/15</p>
+        </div>
+        <div class="card">
+            <h3>Monthly Revenue</h3>
+            <p id="monthly-revenue">₹0</p>
+        </div>
+
+        <!-- Consignment Entry Form -->
+        <div class="card consignment-form">
+            <h2>New Consignment</h2>
+            <input type="text" placeholder="Sender Name" id="senderName" required>
+            <input type="text" placeholder="Receiver Name" id="receiverName" required>
+            <input type="number" placeholder="Volume (m³)" id="volume" required>
+            <select id="destination">
+                <option value="">Select Destination</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="rourkela">Rourkela</option>
+            </select>
+            <button onclick="addConsignment()">Add Consignment</button>
+        </div>
+
+        <!-- Truck Status Grid -->
+        <div class="card">
+            <h2>Truck Status</h2>
+            <div class="truck-grid" id="truckStatus"></div>
+        </div>
+
+        <!-- Destination Progress -->
+        <div class="card">
+            <h2>Destination Load Progress</h2>
+            <div id="destinationProgress"></div>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="card1">
+            <h2>Performance Reports</h2>
+            <canvas id="revenueChart"></canvas>
+            <canvas id="waitingTimeChart"></canvas>
+        </div>
+
+
+
+        
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
